@@ -1,22 +1,22 @@
-# API de Estatísticas de Transações
+API de Estatísticas de Transações
 
 Um projeto desenvolvido em Java com Spring Boot focado na construção de uma API RESTful para recebimento de transações e cálculo de estatísticas em tempo real (contagem, soma, média, valor máximo e valor mínimo).
 
 Este repositório foi criado para praticar e demonstrar conhecimentos fundamentais em desenvolvimento backend, estruturação de projetos e boas práticas.
 
-## Tecnologias e Práticas Utilizadas
+Tecnologias e Práticas Utilizadas
 
-*   **Java 17+**
-*   **Spring Boot** (Web, Validation)
-*   **Lombok** (Redução de verbosidade)
-*   **Maven** (Gerenciamento de dependências)
-*   **Boas Práticas:**
-    *   Uso de **DTOs** (Data Transfer Objects) para desacoplar a camada de visualização dos modelos de negócio.
-    *   **Jakarta Validation** para garantir a integridade dos dados logo na entrada da requisição (`@Valid`, `@NotNull`, `@Min`).
-    *   Estruturas **Thread-Safe** no Service para suportar requisições concorrentes com segurança.
-    *   Cálculos matemáticos otimizados utilizando a **Stream API** do Java (`DoubleSummaryStatistics`).
+*   Java 17+
+*   Spring BooT (Web, Validation)
+*   Lombok (Redução de verbosidade)
+*   Maven (Gerenciamento de dependências)
+*   Boas Práticas:
+    *   Uso de DTOs (Data Transfer Objects) para desacoplar a camada de visualização dos modelos de negócio.
+    *   Jakarta Validation para garantir a integridade dos dados logo na entrada da requisição (@Valid, @NotNulL, @Min).
+    *   Estruturas Thread-Safe no Service para suportar requisições concorrentes com segurança.
+    *   Cálculos matemáticos otimizados utilizando a Stream API do Java (DoubleSummaryStatistics).
 
-## Como executar
+Como executar
 
 1. Deve-se de ter o Java e o Maven instalados na sua máquina.
 2. Clone este repositório:
@@ -33,9 +33,9 @@ Este repositório foi criado para praticar e demonstrar conhecimentos fundamenta
    ```
    A API estará disponível em `http://localhost:8080`.
 
-## Endpoints da API
+Endpoints da API
 
-### 1. Adicionar Transação
+1. Adicionar Transação
 Recebe uma nova transação e a armazena em memória. O valor não pode ser nulo ou negativo.
 
 *   **Rota:** `POST /api/transacao`
@@ -45,15 +45,15 @@ Recebe uma nova transação e a armazena em memória. O valor não pode ser nulo
         "valor": 150.50
     }
     ```
-*   **Respostas:**
+*   Respostas:
     *   `201 Created` - Transação adicionada com sucesso.
     *   `400 Bad Request` - Se o JSON estiver mal formatado, o valor for nulo ou menor que zero.
 
-### 2. Obter Estatísticas
+2. Obter Estatísticas
 Retorna os cálculos estatísticos com base em todas as transações registradas até o momento.
 
-*   **Rota:** `GET /api/estatistica`
-*   **Exemplo de Response Body (JSON):**
+*   Rota: `GET /api/estatistica`
+*   Exemplo de Response Body (JSON):
     ```json
     {
         "count": 10,
@@ -63,5 +63,5 @@ Retorna os cálculos estatísticos com base em todas as transações registradas
         "min": 50.0
     }
     ```
-*   **Respostas:**
+*   Respostas:
     *   `200 OK` - Estatísticas retornadas com sucesso.
