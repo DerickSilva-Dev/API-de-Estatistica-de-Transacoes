@@ -21,7 +21,7 @@ Como executar
 1. Deve-se de ter o Java e o Maven instalados na sua máquina.
 2. Clone este repositório:
    ```bash
-   git clone https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO.git
+   git clone https://github.com/DerickSilva-Dev/API-de-Estat-sticas-de-Transa-es.git
    ```
 3. Acesse a pasta do projeto e instale as dependências:
    ```bash
